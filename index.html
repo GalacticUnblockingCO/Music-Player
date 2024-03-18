@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <style>
+        /* Add your CSS styles here */
+    </style>
+</head>
+<body>
+    <h1>Music Player</h1>
+    <audio id="audioPlayer" controls>
+        <source src="your-audio-file.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <button id="playBtn">Play</button>
+    <button id="pauseBtn">Pause</button>
+    <input id="volumeSlider" type="range" min="0" max="1" step="0.1" value="1">
+    
+    <script>
+        var audioPlayer = document.getElementById("audioPlayer");
+        var playBtn = document.getElementById("playBtn");
+        var pauseBtn = document.getElementById("pauseBtn");
+        var volumeSlider = document.getElementById("volumeSlider");
+        
+        playBtn.addEventListener("click", function() {
+            audioPlayer.play();
+        });
+        
+        pauseBtn.addEventListener("click", function() {
+            audioPlayer.pause();
+        });
+        
+        volumeSlider.addEventListener("input", function() {
+            audioPlayer.volume = this.value;
+        });
+    </script>
+</body>
+</html>
